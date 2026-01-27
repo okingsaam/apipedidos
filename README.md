@@ -1,155 +1,193 @@
-# 🚀 Projeto Backend Profissional — Sistema de Pedidos
+<div align="center">
 
-API backend desenvolvida com **Spring Boot**, focada em boas práticas, arquitetura profissional e evolução gradual até um ambiente de produção real com **Docker, mensageria, microserviços e cloud (AWS)**.
+# 🚀 Sistema de Pedidos — Backend Profissional
 
-Este projeto faz parte do meu plano de evolução como **Desenvolvedor Backend**, saindo do monólito básico até uma arquitetura distribuída e escalável.
+**API REST desenvolvida com Spring Boot**, focada em arquitetura limpa, boas práticas e evolução gradual até um ambiente de produção real com **Docker, mensageria, microserviços e cloud (AWS)**.
 
----
+📌 Projeto em evolução contínua | 🧠 Foco em backend profissional | 💼 Portfólio técnico
 
-## 🧭 Status Atual do Projeto
-
-📍 **Fase atual: FASE 1 → Início da FASE 2**
-
-- ✅ Aplicação Spring Boot rodando
-- ✅ PostgreSQL conectado
-- ✅ JPA + Hibernate configurados
-- ✅ Estrutura em camadas (Controller / Service / Repository)
-- 🚧 Modelagem de entidades em andamento
-- 🚧 Relacionamentos e DTOs sendo implementados
-
-> O projeto está em evolução contínua, seguindo um roadmap profissional (ver abaixo).
+</div>
 
 ---
 
-## 🗺️ Roadmap do Projeto
+## 📍 Status do Projeto
 
-### 🔹 FASE 0 — Preparação (Concluída ✅)
+> **FASE ATUAL:** `FASE 1 CONCLUÍDA → INÍCIO DA FASE 2`
+
+### ✅ Concluído
+- Aplicação Spring Boot rodando
+- PostgreSQL conectado
+- JPA + Hibernate configurados
+- Arquitetura em camadas (Controller / Service / Repository)
+- CRUD completo de pedidos
+- Endpoints testados no Postman
+- Commits organizados e versionados
+- Projeto estável e funcional
+
+### 🚧 Em andamento
+- Evolução do modelo de domínio
+- Relacionamentos entre entidades
+- DTOs
+- Validações de entrada
+
+---
+
+## 🗺️ Roadmap de Evolução
+
+<details>
+<summary><strong>🔹 FASE 0 — Preparação (Concluída)</strong></summary>
+
 - Java 17+
 - Maven
 - Git / GitHub
 - IntelliJ
-- Docker Desktop
 - Postman
-- Projeto inicial rodando
+- Projeto inicial funcional
 
----
+</details>
 
-### 🔹 FASE 1 — Spring Boot Básico (Concluída ✅)
+<details>
+<summary><strong>🔹 FASE 1 — Spring Boot Básico (Concluída)</strong></summary>
+
 - Estrutura em camadas
 - JPA + Hibernate
-- PostgreSQL local
-- CRUD inicial
-- API funcional
+- PostgreSQL
+- CRUD funcional
+- Testes via Postman
+- Histórico de commits limpo
 
----
+</details>
 
-### 🔹 FASE 2 — Banco + Relacionamentos (Em andamento 🚧)
-- Modelagem relacional:
-  - User
-  - Product
-  - Order
-  - OrderItem
+<details>
+<summary><strong>🔹 FASE 2 — Banco + Relacionamentos (Em andamento)</strong></summary>
+
+- Modelagem relacional
 - OneToMany / ManyToOne
 - DTOs
-- Validações
+- Bean Validation
 - Normalização do banco
 
----
+</details>
 
-### 🔹 FASE 3 — Segurança (JWT)
+<details>
+<summary><strong>🔹 FASE 3 — Segurança (JWT)</strong></summary>
+
 - Spring Security
 - Login / Register
 - JWT
-- Filtros
 - Roles (ADMIN / USER)
 
----
+</details>
 
-### 🔹 FASE 4 — Dockerização 🐳
+<details>
+<summary><strong>🔹 FASE 4 — Dockerização 🐳</strong></summary>
+
 - Dockerfile
 - Docker Compose
-- Containers:
-  - API
-  - PostgreSQL
-  - RabbitMQ
+- API + PostgreSQL + RabbitMQ
 
----
+</details>
 
-### 🔹 FASE 5 — Mensageria (RabbitMQ) 📬
-- Producer (Order Service)
-- Consumer (Notification)
-- Exchanges / Queues
-- Retry / Dead Letter
+<details>
+<summary><strong>🔹 FASE 5 — Mensageria (RabbitMQ) 📬</strong></summary>
 
----
+- Producer / Consumer
+- Retry / Dead Letter Queue
+- Comunicação assíncrona
 
-### 🔹 FASE 6 — Testes e Postman
-- Collection Postman
-- Environments
-- Testes automatizados
-- Newman (CLI)
+</details>
 
----
+<details>
+<summary><strong>🔹 FASE 6 — Testes</strong></summary>
 
-### 🔹 FASE 7 — Microserviços 🧩
+- JUnit + Mockito
+- Integração
+- Postman Collection
+- Newman
+
+</details>
+
+<details>
+<summary><strong>🔹 FASE 7 — Microserviços 🧩</strong></summary>
+
 - auth-service
 - order-service
 - product-service
 - notification-service
-- Comunicação via RabbitMQ
 - Banco isolado por serviço
 
----
+</details>
 
-### 🔹 FASE 8 — Deploy em Cloud (AWS) ☁️
+<details>
+<summary><strong>🔹 FASE 8 — Deploy em Cloud (AWS) ☁️</strong></summary>
+
 - EC2
-- Docker no servidor
-- RDS (PostgreSQL)
-- Nginx (proxy)
+- RDS
+- Docker
+- Nginx
 - Security Groups
 
----
+</details>
 
-### 🔹 FASE 9 — Profissionalização 💼
-- Swagger
-- Diagramas de arquitetura
-- README completo
-- Screenshots
+<details>
+<summary><strong>🔹 FASE 9 — Profissionalização 💼</strong></summary>
+
+- Swagger / OpenAPI
 - CI/CD
-- Pipeline automatizado
+- Diagramas
+- Documentação final
+
+</details>
 
 ---
 
 ## 🧠 Stack Tecnológica
 
-- Java 17+
-- Spring Boot 4
-- Spring Data JPA
-- Hibernate
-- PostgreSQL
-- Docker / Docker Compose
-- RabbitMQ
-- Spring Security
-- JWT
-- AWS
-- Nginx
-- GitHub Actions
+<div align="center">
+
+| Categoria | Tecnologias |
+|----------|-------------|
+| Linguagem | Java 17+ |
+| Framework | Spring Boot 4 |
+| Persistência | JPA, Hibernate |
+| Banco | PostgreSQL |
+| Segurança | Spring Security, JWT |
+| Infra | Docker, RabbitMQ |
+| Cloud | AWS |
+| DevOps | GitHub Actions |
+| Testes | JUnit, Mockito, Postman |
+
+</div>
 
 ---
 
-## 🎯 Objetivo Final
+## 🎯 Objetivo do Projeto
 
-Construir um backend **profissional, escalável e pronto para produção**, demonstrando domínio de:
+Construir um backend **robusto, escalável e pronto para produção**, demonstrando domínio real de:
 
 - Arquitetura REST
+- Modelagem de dados
+- Segurança
 - Mensageria
 - Docker
-- Segurança
 - Microserviços
 - Cloud
-- Boas práticas
+- Boas práticas profissionais
 
 ---
 
-📌 **Projeto em constante evolução**  
-Cada fase será implementada com commits organizados e documentação clara.
+## ✍️ Autor
+
+**Sam Douglas**  
+Desenvolvedor Full Stack | Backend Java & Python  
+📍 Em busca da primeira oportunidade como Desenvolvedor Backend  
+
+🔗 [LinkedIn](https://www.linkedin.com/) • [GitHub](https://github.com/)
+
+---
+
+<div align="center">
+
+⭐ Se esse projeto te chamou atenção, deixe uma estrela!
+
+</div>
