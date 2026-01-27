@@ -15,11 +15,20 @@ public class PedidoService {
         this.repository = repository;
     }
 
+    public Pedido salvar(Pedido pedido) {
+        return repository.save(pedido);
+    }
+
     public List<Pedido> listarTodos() {
         return repository.findAll();
     }
 
-    public Pedido salvar(Pedido pedido) {
-        return repository.save(pedido);
+    public Pedido buscarPorId(Long id) {
+        return repository.findById(id)
+                .orElse(null);
+    }
+
+    public void deletar(Long id) {
+        repository.deleteById(id);
     }
 }

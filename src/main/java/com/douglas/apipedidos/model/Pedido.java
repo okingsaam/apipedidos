@@ -1,6 +1,7 @@
 package com.douglas.apipedidos.model;
 
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "pedidos")
@@ -14,8 +15,11 @@ public class Pedido {
 
     private Double valor;
 
+    private LocalDateTime dataCriacao;
+
     // Construtor vazio (obrigatório pro JPA)
-    public Pedido() {}
+    public Pedido() {
+    }
 
     // Getters e Setters
 
@@ -37,5 +41,13 @@ public class Pedido {
 
     public void setValor(Double valor) {
         this.valor = valor;
+    }
+
+    public LocalDateTime getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(LocalDateTime dataCriacao) {
+        this.dataCriacao = dataCriacao;
     }
 }

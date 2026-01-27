@@ -16,15 +16,27 @@ public class PedidoController {
         this.service = service;
     }
 
-    // GET -> listar todos
+    // POST - Criar pedido
+    @PostMapping
+    public Pedido criar(@RequestBody Pedido pedido) {
+        return service.salvar(pedido);
+    }
+
+    // GET - Listar todos
     @GetMapping
     public List<Pedido> listar() {
         return service.listarTodos();
     }
 
-    // POST -> salvar
-    @PostMapping
-    public Pedido salvar(@RequestBody Pedido pedido) {
-        return service.salvar(pedido);
+    // GET - Buscar por id
+    @GetMapping("/{id}")
+    public Pedido buscar(@PathVariable Long id) {
+        return service.buscarPorId(id);
+    }
+
+    // DELETE - Deletar
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Long id) {
+        service.deletar(id);
     }
 }
