@@ -1,6 +1,10 @@
 package com.douglas.apipedidos.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -11,15 +15,22 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "O nome do cliente é obrigatório")
     private String cliente;
 
+    @NotNull(message = "O valor é obrigatório")
+    @Positive(message = "O valor deve ser maior que zero")
     private Double valor;
 
     private LocalDateTime dataCriacao;
 
-    // Construtor vazio (obrigatório pro JPA)
-    public Pedido() {
+    @PrePersist
+    public void gerarData() {
+        this.dataCriacao = LocalDateTime.now();
     }
+
+    // Construtor vazio
+    public Pedido() {}
 
     // Getters e Setters
 
@@ -45,9 +56,5 @@ public class Pedido {
 
     public LocalDateTime getDataCriacao() {
         return dataCriacao;
-    }
-
-    public void setDataCriacao(LocalDateTime dataCriacao) {
-        this.dataCriacao = dataCriacao;
     }
 }

@@ -2,6 +2,7 @@ package com.douglas.apipedidos.controller;
 
 import com.douglas.apipedidos.model.Pedido;
 import com.douglas.apipedidos.service.PedidoService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,9 +17,9 @@ public class PedidoController {
         this.service = service;
     }
 
-    // POST - Criar pedido
+    // POST - Criar pedido (com validação)
     @PostMapping
-    public Pedido criar(@RequestBody Pedido pedido) {
+    public Pedido criar(@Valid @RequestBody Pedido pedido) {
         return service.salvar(pedido);
     }
 
