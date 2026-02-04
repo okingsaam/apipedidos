@@ -12,7 +12,7 @@
 
 ## 📍 Status do Projeto
 
-> **FASE ATUAL:** `FASE 1 CONCLUÍDA → INÍCIO DA FASE 2`
+> **FASE ATUAL:** `FASE 2 EM ANDAMENTO (DTOs + Validações concluídos)`
 
 ### ✅ Concluído
 - Aplicação Spring Boot rodando
@@ -23,12 +23,16 @@
 - Endpoints testados no Postman
 - Commits organizados e versionados
 - Projeto estável e funcional
+- DTOs implementados (Request / Response)
+- Mapper para conversão de entidades
+- Validação de entrada com Bean Validation
+- Controller desacoplado de entidades
+- Estrutura preparada para evolução do domínio
 
 ### 🚧 Em andamento
-- Evolução do modelo de domínio
 - Relacionamentos entre entidades
-- DTOs
-- Validações de entrada
+- Normalização do banco
+- Evolução do modelo de domínio
 
 ---
 
@@ -59,13 +63,13 @@
 </details>
 
 <details>
-<summary><strong>🔹 FASE 2 — Banco + Relacionamentos (Em andamento)</strong></summary>
+<summary><strong>🔹 FASE 2 — Banco + Relacionamentos (Em andamento 🚧)</strong></summary>
 
-- Modelagem relacional
-- OneToMany / ManyToOne
-- DTOs
-- Bean Validation
-- Normalização do banco
+- DTOs ✅
+- Bean Validation ✅
+- Mapper ✅
+- Relacionamentos 🔄
+- Normalização 🔄
 
 </details>
 
@@ -148,7 +152,7 @@
 | Categoria | Tecnologias |
 |----------|-------------|
 | Linguagem | Java 17+ |
-| Framework | Spring Boot 4 |
+| Framework | Spring Boot |
 | Persistência | JPA, Hibernate |
 | Banco | PostgreSQL |
 | Segurança | Spring Security, JWT |
