@@ -12,7 +12,7 @@
 
 ## 📍 Status do Projeto
 
-> **FASE ATUAL:** `FASE 2 EM ANDAMENTO (DTOs + Validações concluídos)`
+> **FASE ATUAL:** `FASE 2 EM ANDAMENTO (DTOs + Validações + Mapper + Tratamento de Exceções concluídos)`
 
 ### ✅ Concluído
 - Aplicação Spring Boot rodando
@@ -28,6 +28,9 @@
 - Validação de entrada com Bean Validation
 - Controller desacoplado de entidades
 - Estrutura preparada para evolução do domínio
+- Tratamento global de exceções
+- Exception customizada para recursos não encontrados
+- Endpoint de atualização (PUT) implementado
 
 ### 🚧 Em andamento
 - Relacionamentos entre entidades
@@ -184,7 +187,7 @@ Construir um backend **robusto, escalável e pronto para produção**, demonstra
 
 **Sam Douglas**  
 Desenvolvedor Full Stack | Backend Java & Python  
-📍 Em busca da primeira oportunidade como Desenvolvedor Backend  
+📍 Em busca da primeira oportunidade como Desenvolvedor Backend
 
 🔗 [LinkedIn](https://www.linkedin.com/) • [GitHub](https://github.com/)
 

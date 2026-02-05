@@ -2,6 +2,7 @@ package com.douglas.apipedidos.service;
 
 import com.douglas.apipedidos.dto.PedidoRequestDTO;
 import com.douglas.apipedidos.dto.PedidoResponseDTO;
+import com.douglas.apipedidos.exception.PedidoNaoEncontradoException;
 import com.douglas.apipedidos.mapper.PedidoMapper;
 import com.douglas.apipedidos.model.Pedido;
 import com.douglas.apipedidos.repository.PedidoRepository;
@@ -19,14 +20,12 @@ public class PedidoService {
         this.repository = repository;
     }
 
-    // CREATE
     public PedidoResponseDTO salvar(PedidoRequestDTO dto) {
         Pedido pedido = PedidoMapper.toEntity(dto);
         Pedido salvo = repository.save(pedido);
         return PedidoMapper.toResponse(salvo);
     }
 
-    // GET ALL
     public List<PedidoResponseDTO> listarTodos() {
         return repository.findAll()
                 .stream()
@@ -34,15 +33,24 @@ public class PedidoService {
                 .collect(Collectors.toList());
     }
 
-    // GET BY ID
     public PedidoResponseDTO buscarPorId(Long id) {
         Pedido pedido = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Pedido não encontrado"));
+                .orElseThrow(() -> new PedidoNaoEncontradoException(id));
 
         return PedidoMapper.toResponse(pedido);
     }
 
-    // DELETE
+    public PedidoResponseDTO atualizar(Long id, PedidoRequestDTO dto) {
+        Pedido pedido = repository.findById(id)
+                .orElseThrow(() -> new PedidoNaoEncontradoException(id));
+
+        pedido.setCliente(dto.getCliente());
+        pedido.setValor(dto.getValor());
+
+        Pedido atualizado = repository.save(pedido);
+        return PedidoMapper.toResponse(atualizado);
+    }
+
     public void deletar(Long id) {
         repository.deleteById(id);
     }
