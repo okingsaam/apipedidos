@@ -1,200 +1,137 @@
-<div align="center">
+# 📦 API de Pedidos
 
-# 🚀 Sistema de Pedidos — Backend Profissional
+API REST desenvolvida com **Spring Boot** para gerenciamento de pedidos.
 
-**API REST desenvolvida com Spring Boot**, focada em arquitetura limpa, boas práticas e evolução gradual até um ambiente de produção real com **Docker, mensageria, microserviços e cloud (AWS)**.
-
-📌 Projeto em evolução contínua | 🧠 Foco em backend profissional | 💼 Portfólio técnico
-
-</div>
+Este projeto implementa um **CRUD completo**, utilizando boas práticas de desenvolvimento backend como **DTO, validação, paginação e documentação com Swagger**.
 
 ---
 
-## 📍 Status do Projeto
+# 🚀 Tecnologias utilizadas
 
-> **FASE ATUAL:** `FASE 2 EM ANDAMENTO (DTOs + Validações + Mapper + Tratamento de Exceções concluídos)`
-
-### ✅ Concluído
-- Aplicação Spring Boot rodando
-- PostgreSQL conectado
-- JPA + Hibernate configurados
-- Arquitetura em camadas (Controller / Service / Repository)
-- CRUD completo de pedidos
-- Endpoints testados no Postman
-- Commits organizados e versionados
-- Projeto estável e funcional
-- DTOs implementados (Request / Response)
-- Mapper para conversão de entidades
-- Validação de entrada com Bean Validation
-- Controller desacoplado de entidades
-- Estrutura preparada para evolução do domínio
-- Tratamento global de exceções
-- Exception customizada para recursos não encontrados
-- Endpoint de atualização (PUT) implementado
-
-### 🚧 Em andamento
-- Relacionamentos entre entidades
-- Normalização do banco
-- Evolução do modelo de domínio
-
----
-
-## 🗺️ Roadmap de Evolução
-
-<details>
-<summary><strong>🔹 FASE 0 — Preparação (Concluída)</strong></summary>
-
-- Java 17+
-- Maven
-- Git / GitHub
-- IntelliJ
-- Postman
-- Projeto inicial funcional
-
-</details>
-
-<details>
-<summary><strong>🔹 FASE 1 — Spring Boot Básico (Concluída)</strong></summary>
-
-- Estrutura em camadas
-- JPA + Hibernate
+- Java 17
+- Spring Boot
+- Spring Web
+- Spring Data JPA
 - PostgreSQL
-- CRUD funcional
-- Testes via Postman
-- Histórico de commits limpo
-
-</details>
-
-<details>
-<summary><strong>🔹 FASE 2 — Banco + Relacionamentos (Em andamento 🚧)</strong></summary>
-
-- DTOs ✅
-- Bean Validation ✅
-- Mapper ✅
-- Relacionamentos 🔄
-- Normalização 🔄
-
-</details>
-
-<details>
-<summary><strong>🔹 FASE 3 — Segurança (JWT)</strong></summary>
-
-- Spring Security
-- Login / Register
-- JWT
-- Roles (ADMIN / USER)
-
-</details>
-
-<details>
-<summary><strong>🔹 FASE 4 — Dockerização 🐳</strong></summary>
-
-- Dockerfile
-- Docker Compose
-- API + PostgreSQL + RabbitMQ
-
-</details>
-
-<details>
-<summary><strong>🔹 FASE 5 — Mensageria (RabbitMQ) 📬</strong></summary>
-
-- Producer / Consumer
-- Retry / Dead Letter Queue
-- Comunicação assíncrona
-
-</details>
-
-<details>
-<summary><strong>🔹 FASE 6 — Testes</strong></summary>
-
-- JUnit + Mockito
-- Integração
-- Postman Collection
-- Newman
-
-</details>
-
-<details>
-<summary><strong>🔹 FASE 7 — Microserviços 🧩</strong></summary>
-
-- auth-service
-- order-service
-- product-service
-- notification-service
-- Banco isolado por serviço
-
-</details>
-
-<details>
-<summary><strong>🔹 FASE 8 — Deploy em Cloud (AWS) ☁️</strong></summary>
-
-- EC2
-- RDS
-- Docker
-- Nginx
-- Security Groups
-
-</details>
-
-<details>
-<summary><strong>🔹 FASE 9 — Profissionalização 💼</strong></summary>
-
+- Bean Validation
 - Swagger / OpenAPI
-- CI/CD
-- Diagramas
-- Documentação final
-
-</details>
+- Maven
 
 ---
 
-## 🧠 Stack Tecnológica
+# 📂 Estrutura do Projeto
 
-<div align="center">
+```
+src/main/java/com/douglas/apipedidos
 
-| Categoria | Tecnologias |
-|----------|-------------|
-| Linguagem | Java 17+ |
-| Framework | Spring Boot |
-| Persistência | JPA, Hibernate |
-| Banco | PostgreSQL |
-| Segurança | Spring Security, JWT |
-| Infra | Docker, RabbitMQ |
-| Cloud | AWS |
-| DevOps | GitHub Actions |
-| Testes | JUnit, Mockito, Postman |
-
-</div>
+controller   -> Endpoints da API
+service      -> Regras de negócio
+repository   -> Acesso ao banco de dados
+dto          -> Objetos de transferência de dados
+entity       -> Entidades JPA
+mapper       -> Conversão entre Entity e DTO
+exception    -> Tratamento global de erros
+```
 
 ---
 
-## 🎯 Objetivo do Projeto
+# 📌 Funcionalidades
 
-Construir um backend **robusto, escalável e pronto para produção**, demonstrando domínio real de:
-
-- Arquitetura REST
-- Modelagem de dados
-- Segurança
-- Mensageria
-- Docker
-- Microserviços
-- Cloud
-- Boas práticas profissionais
+- Criar pedido
+- Listar pedidos com paginação
+- Buscar pedido por ID
+- Atualizar pedido
+- Deletar pedido
+- Validação de dados
+- Tratamento global de exceções
+- Documentação automática com Swagger
 
 ---
 
-## ✍️ Autor
+# 📡 Endpoints
 
-**Sam Douglas**  
-Desenvolvedor Full Stack | Backend Java & Python  
-📍 Em busca da primeira oportunidade como Desenvolvedor Backend
-
-🔗 [LinkedIn](https://www.linkedin.com/) • [GitHub](https://github.com/)
+| Método | Endpoint | Descrição |
+|------|------|------|
+| POST | /pedidos | Criar pedido |
+| GET | /pedidos | Listar pedidos |
+| GET | /pedidos/{id} | Buscar pedido por ID |
+| PUT | /pedidos/{id} | Atualizar pedido |
+| DELETE | /pedidos/{id} | Deletar pedido |
 
 ---
 
-<div align="center">
+# 📄 Exemplo de requisição
 
-⭐ Se esse projeto te chamou atenção, deixe uma estrela!
+### Criar Pedido
 
-</div>
+```json
+{
+  "cliente": "Douglas",
+  "valor": 200
+}
+```
+
+### Resposta da API
+
+```json
+{
+  "id": 1,
+  "cliente": "Douglas",
+  "valor": 200,
+  "dataCriacao": "2026-03-07T20:39:48"
+}
+```
+
+---
+
+# 📖 Documentação Swagger
+
+Após iniciar o projeto, acesse:
+
+```
+http://localhost:8080/swagger-ui/index.html
+```
+
+---
+
+# ⚙️ Como executar o projeto
+
+### 1. Clonar o repositório
+
+```
+git clone https://github.com/seu-usuario/apipedidos.git
+```
+
+### 2. Entrar na pasta do projeto
+
+```
+cd apipedidos
+```
+
+### 3. Rodar a aplicação
+
+```
+mvn spring-boot:run
+```
+
+---
+
+# 🗄 Banco de Dados
+
+O projeto utiliza **PostgreSQL**.
+
+Exemplo de configuração no `application.properties`:
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/apipedidos
+spring.datasource.username=postgres
+spring.datasource.password=senha
+spring.jpa.hibernate.ddl-auto=update
+```
+
+---
+
+# 👨‍💻 Autor
+
+Desenvolvido por **Douglas**  
+Projeto criado para prática de desenvolvimento backend com **Spring Boot**.
