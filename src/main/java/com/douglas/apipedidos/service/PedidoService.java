@@ -6,10 +6,10 @@ import com.douglas.apipedidos.exception.PedidoNaoEncontradoException;
 import com.douglas.apipedidos.mapper.PedidoMapper;
 import com.douglas.apipedidos.model.Pedido;
 import com.douglas.apipedidos.repository.PedidoRepository;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 @Service
 public class PedidoService {
@@ -22,36 +22,33 @@ public class PedidoService {
 
     public PedidoResponseDTO salvar(PedidoRequestDTO dto) {
         Pedido pedido = PedidoMapper.toEntity(dto);
-        Pedido salvo = repository.save(pedido);
-        return PedidoMapper.toResponse(salvo);
+        return PedidoMapper.toResponse(repository.save(pedido));
     }
 
-    public List<PedidoResponseDTO> listarTodos() {
-        return repository.findAll()
-                .stream()
-                .map(PedidoMapper::toResponse)
-                .collect(Collectors.toList());
+    public Page<PedidoResponseDTO> listarTodos(Pageable pageable) {
+        return repository.findAll(pageable)
+                .map(PedidoMapper::toResponse);
     }
 
     public PedidoResponseDTO buscarPorId(Long id) {
-        Pedido pedido = repository.findById(id)
-                .orElseThrow(() -> new PedidoNaoEncontradoException(id));
-
-        return PedidoMapper.toResponse(pedido);
+        return PedidoMapper.toResponse(buscarPedido(id));
     }
 
     public PedidoResponseDTO atualizar(Long id, PedidoRequestDTO dto) {
-        Pedido pedido = repository.findById(id)
-                .orElseThrow(() -> new PedidoNaoEncontradoException(id));
+        Pedido pedido = buscarPedido(id);
 
         pedido.setCliente(dto.getCliente());
         pedido.setValor(dto.getValor());
 
-        Pedido atualizado = repository.save(pedido);
-        return PedidoMapper.toResponse(atualizado);
+        return PedidoMapper.toResponse(repository.save(pedido));
     }
 
     public void deletar(Long id) {
-        repository.deleteById(id);
+        repository.delete(buscarPedido(id));
+    }
+
+    private Pedido buscarPedido(Long id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new PedidoNaoEncontradoException(id));
     }
 }
